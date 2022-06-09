@@ -17,7 +17,9 @@ h1 {
 h2, p, h3 {
     font-family: 'Roboto', sans-serif;
 }
-
+ion-icon {
+    display: none;
+}
 
 
 .top-bar {
@@ -29,6 +31,7 @@ h2, p, h3 {
     top: 0px;
     left: 0px;
     background-color: #CF2B2B;
+    z-index: 1;
 }
 .top-bar h1 {
     color: #FFFFFF;
@@ -56,34 +59,36 @@ h2, p, h3 {
     max-width: 100%;
     overflow-x: scroll;
 }
-.card {
+
+.menu div {
     min-width: 172px;
     border: 1px solid #FFFFFF;
     border-radius: 9px;
     background-color: #FFFFFF;
-    margin: 0px 16px;
+    margin-right: 16px;
     padding: 18px 14px 13px 14px;
+    position: relative;
 }
-.card img {
+.menu div img {
     width: 144px;
     height: 82px;
     border-radius: 4px;
 }
-.card h2 {
+.menu div h2 {
     font-size: 16px;
     color: #333333;
     font-weight: 700;
     line-height: 19px;
     margin-top: 8px;
 }
-.card p {
+.menu div p {
     font-size: 15px;
     color: #a6a6a6;
     font-weight: 300;
     line-height: 18px;
     margin-top: 4px;
 }
-.card h3 {
+.menu div h3 {
     font-size: 16px;
     color: #000000;
     font-weight: 400;
@@ -91,6 +96,19 @@ h2, p, h3 {
     margin-top: 5px;
 }
 
+/* card selecionado */
+.menu div:hover {
+    border: 5px solid #32B72F;
+    border-radius: 9px;
+}
+.menu div:hover ion-icon {
+    color: #32B72F;
+    font-size: 19px;
+    position: absolute;
+    bottom: 10px;
+    right: 7px;
+    display: initial;
+}
 
 
 .bottom-bar {
@@ -104,6 +122,8 @@ h2, p, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px 25px;
+    z-index: 1;
 }
 .bottom-bar button {
     background-color: #cbcbcb;
