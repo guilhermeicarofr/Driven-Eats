@@ -18,7 +18,7 @@ h2, p, h3 {
     font-family: 'Roboto', sans-serif;
 }
 ion-icon {
-    display: none;
+    opacity: 0;
 }
 
 
@@ -97,19 +97,18 @@ ion-icon {
 }
 
 /* card selecionado */
-.menu div:hover {
+.menu div.selected {
     border: 5px solid #32B72F;
     border-radius: 9px;
 }
-.menu div:hover ion-icon {
+.menu div.selected ion-icon {
     color: #32B72F;
     font-size: 19px;
     position: absolute;
     bottom: 10px;
     right: 7px;
-    display: initial;
+    opacity: 1;
 }
-
 
 .bottom-bar {
     width: 100%;
