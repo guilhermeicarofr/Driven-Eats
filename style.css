@@ -22,6 +22,7 @@ ion-icon {
 }
 
 
+
 .top-bar {
     width: 100%;
     max-width: 650px;
@@ -95,7 +96,6 @@ ion-icon {
     line-height: 19px;
     margin-top: 5px;
 }
-
 /* card selecionado */
 .menu div.selected {
     border: 5px solid #32B72F;
@@ -109,6 +109,8 @@ ion-icon {
     right: 7px;
     opacity: 1;
 }
+
+
 
 .bottom-bar {
     width: 100%;
@@ -126,6 +128,7 @@ ion-icon {
 }
 .bottom-bar button {
     background-color: #cbcbcb;
+    border: 1px solid #cbcbcb;
     width: 364px;
     height: 61px;
     border-radius: 50px;
@@ -134,4 +137,27 @@ ion-icon {
     text-align: center;
     font-size: 20px;
     color: #FFFFFF;
+}
+/* botao habilitado */
+.bottom-bar button.ready {
+    background-color: #32B72F;
+    border: 1px solid #32B72F;
+    font-weight: bold;
+}
+
+
+.checkout-box {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.checkout-box div {
+    width: 377px;
+    height: 353px;
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    line-height: 26px;
+
+    background-color: #32B72F;
+    border: 1px solid #32B72F;
+    border-radius: 9px;
 }
