@@ -59,9 +59,34 @@ function buttonReady () {
     button.querySelector("p").innerHTML = "Fechar pedido";
 }
 
+//funcao que monta a tabela de itens da tela de confirmacao
+function checkoutTable () {
+    let total = (price[0]+price[1]+price[2]);
+    let html = `
+    <tr>
+        <td>${item[0]}</td>
+        <td>${price[0].toFixed(2)}</td>
+    </tr>
+    <tr>
+        <td>${item[1]}</td>
+        <td>${price[1].toFixed(2)}</td>
+    </tr>
+    <tr>
+        <td>${item[2]}</td>
+        <td>${price[2].toFixed(2)}</td>
+    </tr>
+    <tr>
+        <td><strong>TOTAL</strong></td>
+        <td><strong>R$ ${total.toFixed(2)}</strong></td>
+    </tr>
+    `;
+    (document.querySelector(".checkout-box table").innerHTML) = html;
+}
+
 //funcao que chama/volta a tela de confirmacao
 function checkout () {
     document.querySelector(".checkout-box").classList.toggle('hidden');
+    checkoutTable();
 }
 
 //funcao que escreve a mensagem de whatsapp e codifica ela para o link

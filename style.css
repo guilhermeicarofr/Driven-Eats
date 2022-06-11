@@ -61,7 +61,7 @@ ion-icon {
     padding-left: 19px;
     overflow-x: scroll;
 }
-
+/* cards de itens selecionaveis */
 .menu div {
     min-width: 172px;
     border: 5px solid #FFFFFF;
@@ -173,7 +173,6 @@ ion-icon {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     line-height: 26px;
-
     background-color: #32B72F;
     border: 1px solid #32B72F;
     border-radius: 9px;
@@ -213,4 +212,20 @@ ion-icon {
     position: absolute;
     left: 22px;
     bottom: 0px;
+}
+.checkout-box table {
+    color: #FFFFFF;
+    font-size: 22px;
+    width: 300px;
+    height: 130px;
+    margin: 40px auto;
+}
+.checkout-box table tr td:nth-of-type(1) {
+    text-align: left;
+}
+.checkout-box table tr td:nth-of-type(2) {
+    text-align: right;
+}
+.checkout-box strong {
+    font-weight: bold;
 }
