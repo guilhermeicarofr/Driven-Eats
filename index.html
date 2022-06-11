@@ -116,16 +116,22 @@
         </div>
 
         <div class="bottom-bar">
-            <button><p>Selecione os 3 itens <br> para fechar o pedido</p></button>
+            <button onclick="closeOrder(this)"><p>Selecione os 3 itens <br> para fechar o pedido</p></button>
         </div>
 
         <div class="checkout-box hidden">
             <div>
                 <h4>Confirme seu pedido</h4>
                 <!-- tabela de itens e precos -->
-                <button>Tudo certo, pode pedir!</button>
+
+
+
+
+
+
+                <button><a href="">Tudo certo, pode pedir!</a></button>
                 <br>
-                <button>Cancelar</button>
+                <button onclick="checkout();">Cancelar</button>
             </div>
         </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
