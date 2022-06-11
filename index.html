@@ -20,28 +20,28 @@
             
             <h1>Primeiro, seu prato</h1>
             <div class="menu">
-                <div onclick="selectItem(1,1);">
+                <div onclick="selectItem(1,this);">
                     <img src="images/lasanha.jpeg">
                     <h2>Lasanha</h2>
                     <p>A preferida de um certo gato laranja</p>
                     <h3>R$18,90</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(1,2);">
+                <div onclick="selectItem(1,this);">
                     <img src="images/tropeiro.jpeg">
                     <h2>Feijão Tropeiro</h2>
                     <p>Diretamente de Minas</p>
                     <h3>R$15,90</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(1,3);">
+                <div onclick="selectItem(1,this);">
                     <img src="images/macarrao.jpg">
                     <h2>Macarrão Italiano</h2>
                     <p>Com um jeitinho brasileiro</p>
                     <h3>R$22,90</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(1,4);">
+                <div onclick="selectItem(1,this);">
                     <img src="images/feijoada.jpeg">
                     <h2>Feijoada</h2>
                     <p>Completa com tudo que tem direito</p>
@@ -52,28 +52,28 @@
 
             <h1>Agora, sua bebida</h1>
             <div class="menu">
-                <div onclick="selectItem(2,1);">
+                <div onclick="selectItem(2,this);">
                     <img src="images/coca.jpg">
                     <h2>Coca Lata</h2>
                     <p>Coquinha gelada hummm</p>
                     <h3>R$05,50</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(2,2);">
+                <div onclick="selectItem(2,this);">
                     <img src="images/jesus.jpg">
                     <h2>Guaraná Jesus</h2>
                     <p>Divinamente refrescante</p>
                     <h3>R$04,50</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(2,3);">
+                <div onclick="selectItem(2,this);">
                     <img src="images/laranjada.jpg">
                     <h2>Suco Laranja</h2>
                     <p>Pra quem prefere algo saudável</p>
                     <h3>R$06,90</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(2,4);">
+                <div onclick="selectItem(2,this);">
                     <img src="images/limonada.jpg">
                     <h2>Limonada Suíça</h2>
                     <p>Azedinha e doce ao mesmo tempo</p>
@@ -84,28 +84,28 @@
 
             <h1>Por fim, sua sobremesa</h1>
             <div class="menu">
-                <div onclick="selectItem(3,1);">
+                <div onclick="selectItem(3,this);">
                     <img src="images/cocada.jpeg">
                     <h2>Cocada</h2>
                     <p>Não é bahiana mas é quase</p>
                     <h3>R$04,00</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(3,2);">
+                <div onclick="selectItem(3,this);">
                     <img src="images/pudim.jpg">
                     <h2>Pudim</h2>
                     <p>Uma bomba de açucar e sabor</p>
                     <h3>R$13,00</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(3,3);">
+                <div onclick="selectItem(3,this);">
                     <img src="images/palha.jpeg">
                     <h2>Palha Italiana</h2>
                     <p>Nunca vista no continente europeu</p>
                     <h3>R$07,50</h3>
                     <ion-icon name="checkmark-circle"></ion-icon>
                 </div>
-                <div onclick="selectItem(3,4);">
+                <div onclick="selectItem(3,this);">
                     <img src="images/banana.jpg">
                     <h2>Banana Caramelo</h2>
                     <p>Docinha e crocante do oriente</p>
@@ -119,27 +119,10 @@
             <button><p>Selecione os 3 itens <br> para fechar o pedido</p></button>
         </div>
 
-        <div class="checkout-box">
+        <div class="checkout-box hidden">
             <div>
                 <h4>Confirme seu pedido</h4>
-                <table>
-                    <tr>
-                        <th>Item1</th>
-                        <th>Preco1</th>
-                    </tr>
-                    <tr>
-                        <td>Item2</td>
-                        <td>Preco2</td>
-                    </tr>
-                    <tr>
-                        <td>Item3</td>
-                        <td>Preco3</td>
-                    </tr>
-                    <tr>
-                        <td> <strong>TOTAL</strong></td>
-                        <td> <strong>R$00,00</strong> </td>
-                    </tr>
-                </table>
+                <!-- tabela de itens e precos -->
                 <button>Tudo certo, pode pedir!</button>
                 <br>
                 <button>Cancelar</button>

@@ -1,61 +1,34 @@
-function findCard (m, c) {
-    let card;
-    if (m===1) {
-        switch(c) {
-            case 1:
-                card = document.querySelector(".menu:nth-of-type(1) div:nth-child(1)");
-                break;
-            case 2:
-                card = document.querySelector(".menu:nth-of-type(1) div:nth-child(2)");
-                break;        
-            case 3:
-                card = document.querySelector(".menu:nth-of-type(1) div:nth-child(3)");
-                break;
-            case 4:
-                card = document.querySelector(".menu:nth-of-type(1) div:nth-child(4)");
-                break;
-        }
-    } else if (m===2) {
-        switch(c) {
-            case 1:
-                card = document.querySelector(".menu:nth-of-type(2) div:nth-child(1)");
-                break;
-            case 2:
-                card = document.querySelector(".menu:nth-of-type(2) div:nth-child(2)");
-                break;        
-            case 3:
-                card = document.querySelector(".menu:nth-of-type(2) div:nth-child(3)");
-                break;
-            case 4:
-                card = document.querySelector(".menu:nth-of-type(2) div:nth-child(4)");
-                break;
-        }
-    } else if (m===3) {
-        switch(c) {
-            case 1:
-                card = document.querySelector(".menu:nth-of-type(3) div:nth-child(1)");
-                break;
-            case 2:
-                card = document.querySelector(".menu:nth-of-type(3) div:nth-child(2)");
-                break;        
-            case 3:
-                card = document.querySelector(".menu:nth-of-type(3) div:nth-child(3)");
-                break;
-            case 4:
-                card = document.querySelector(".menu:nth-of-type(3) div:nth-child(4)");
-                break;
-        }
-    }
-    return card;
-}
+let item=[]; //array contendo os nome dos 3 produtos selecionados
+let price=[]; //array contendo os precos dos 3 produtos selecionados
+let count = 0;
 
-function markCard (m,c) {
-    const card = findCard(m,c);
+//marca o card de produto selecionado
+function markCard (card) {
     card.classList.toggle("selected");
 }
 
-function cardPrice (m,c) {
-    let text = findCard(m,c).querySelector("h3").innerHTML;
+//garante que apenas um card seja selecionado por menu
+function onlyCardMenu (m) {
+
+    switch (m) {
+    case 1:
+        marked = document.querySelector(".menu:nth-of-type(1) div.selected");
+        break;
+    case 2:
+        marked = document.querySelector(".menu:nth-of-type(2) div.selected");
+        break;
+    case 3:
+        marked = document.querySelector(".menu:nth-of-type(3) div.selected");
+        break;
+    }
+    
+    if (marked)
+        marked.classList.remove("selected");
+}
+
+//extrai o preco do produto do html
+function cardPrice (card) {
+    let text = card.querySelector("h3").innerHTML;
     let price='';
 
     for(let i=2;i<7;i++) {
@@ -69,21 +42,13 @@ function cardPrice (m,c) {
     return(price);
 }
 
-function cardName (m,c) {
-    const name = findCard(m,c).querySelector("h2").innerHTML;
+//extrai o nome do produto do html
+function cardName (card) {
+    const name = card.querySelector("h2").innerHTML;
     return name;
 }
 
-function onlyCardMenu (m) {
-
-    let card;
-    for (let j=1;j<5;j++) {
-        card = findCard(m,j);
-        if (card.classList.contains("selected"))
-            card.classList.toggle("selected");
-    }
-} 
-
+//habilita o botao de finalizar
 function buttonReady () {
     const button = document.querySelector(".bottom-bar button");
     button.classList.add("ready");
@@ -93,7 +58,22 @@ function buttonReady () {
 
 
 
-function selectItem (m, c) {
-    onlyCardMenu (m)
-    markCard(m,c);
+//Funcao chamada pelo clique na div de um card de produto
+function selectItem (m, card) {
+    
+    //chamando funcoes para desmarcar outro pedido do mesmo menu e marcar o clicado
+    onlyCardMenu (m);
+    markCard(card);
+
+    //verifica se o item clicado é apenas uma troca de opcao ou é mais uma selecao de outro menu
+    if (item[m-1] == null)
+        count++;
+
+    //preencher os arrays com nome e preco do item
+    item[m-1] = cardName(card);
+    price[m-1] = cardPrice(card);
+
+    //monitora se os 3 itens já foram selecionados para finalizar o pedido
+    if (count>=3)
+        buttonReady();
 }
